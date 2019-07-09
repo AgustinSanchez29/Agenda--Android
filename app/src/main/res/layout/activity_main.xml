@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7AF0CBCB"
+    android:background="#A1F0CBCB"
     tools:context=".MainActivity">
 
     <Button
@@ -15,8 +15,8 @@
         android:layout_marginTop="236dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="_addActivity"
         android:background="#4CAF50"
+        android:onClick="_addActivity"
         android:text="ADD NOTE"
         android:textColor="#FFFFFF"
         android:textSize="24sp"

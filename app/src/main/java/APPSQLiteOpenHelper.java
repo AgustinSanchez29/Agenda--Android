@@ -8,13 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class APPSQLiteOpenHelper extends SQLiteOpenHelper{
 
     public static final int DATABASE_VERSION=1;
-    public static final String DATABASE_NAME="notas.db";
-    public static final String TABLA_NOMBRES="info";
-    public static final String COLUMNA_ID="id";
-    public static final String COLUMNA_NOMBRE="nombre";
+    public static final String DATABASE_NAME="project.db";
 
 
-    String _SQL= "CREATE TABLE" + TABLA_NOMBRES + "(_id integer primary key autoincrement, titulo varchar(50) not null, nota varchar(500) not null, fecha datetime not null)";
+
+
 
     public APPSQLiteOpenHelper(Context context){
         super(context,DATABASE_NAME, null, DATABASE_VERSION);
@@ -22,7 +20,8 @@ public class APPSQLiteOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL(_SQL);
+        db.execSQL("CREATE TABLE notas(_id integer primary key autoincrement, titulo varchar(50) unique not null ," +
+                "ubicacion varchar(50) not null,fecha_inicio varchar(20) not null, fecha_final varchar(20) not null, asistentes int not null)");
     }
 
     @Override
