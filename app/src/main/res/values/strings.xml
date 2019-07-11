@@ -6,4 +6,5 @@
     <string name="txtInicio">Desde</string>
     <string name="txtFin">Hasta</string>
     <string name="txtAsist">Asistentes</string>
+    <string name="txtcodigo">Codigo</string>
 </resources>

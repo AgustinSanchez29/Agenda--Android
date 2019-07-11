@@ -17,7 +17,7 @@ import com.example.semestral.APPSQLiteOpenHelper;
 public class addActivity extends AppCompatActivity {
 
     private EditText titulo, ubicacion,inicio,fin,asistente,codigo;
-    int id =0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,41 @@ public class addActivity extends AppCompatActivity {
     }
 
 
+    public void buscar(View view){
+        APPSQLiteOpenHelper con = new APPSQLiteOpenHelper(this,"notas",null,1);
+        SQLiteDatabase sql = con.getWritableDatabase();
+
+        String cod= codigo.getText().toString();
+        if(!cod.isEmpty()){
+
+            Log.i(cod, "ENTRO********");
+
+
+            Cursor fila = sql.rawQuery
+                    ("select titulo,ubicacion, fecha_inicio, fecha_final, asistentes from notas where _id=" + cod, null);
+
+            if(fila.moveToFirst()){
+                titulo.setText(fila.getString(0));
+                ubicacion.setText(fila.getString(1));
+                inicio.setText(fila.getString(2));
+                fin.setText(fila.getString(3));
+                asistente.setText(fila.getString(4));
+                sql.close();
+            } else {
+                Toast.makeText(this,"No existe el registro", Toast.LENGTH_SHORT).show();
+                sql.close();
+            }
+
+        } else {
+            Toast.makeText(this, "Debes introducir el titulo del registro", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 
     public void guardar(View view){
-        APPSQLiteOpenHelper con= new APPSQLiteOpenHelper(this);
+        APPSQLiteOpenHelper con= new APPSQLiteOpenHelper(this,"notas",null,1);
         SQLiteDatabase sql = con.getWritableDatabase();
 
         String tit= titulo.getText().toString();
@@ -73,7 +105,7 @@ public class addActivity extends AppCompatActivity {
     }
 
     public void eliminar(View view){
-        APPSQLiteOpenHelper con= new APPSQLiteOpenHelper(this);
+        APPSQLiteOpenHelper con= new APPSQLiteOpenHelper(this,"notas",null,1);
         SQLiteDatabase sql = con.getWritableDatabase();
 
         String cod= codigo.getText().toString();

@@ -14,8 +14,8 @@ public class APPSQLiteOpenHelper extends SQLiteOpenHelper{
 
 
 
-    public APPSQLiteOpenHelper(Context context){
-        super(context,DATABASE_NAME, null, DATABASE_VERSION);
+    public APPSQLiteOpenHelper(Context context,String name,SQLiteDatabase.CursorFactory factory,int version){
+        super(context,name, null, version);
     }
 
     @Override

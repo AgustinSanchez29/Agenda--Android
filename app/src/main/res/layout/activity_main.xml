@@ -8,38 +8,39 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnCrear"
-        android:layout_width="171dp"
-        android:layout_height="201dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="236dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#4CAF50"
-        android:onClick="_addActivity"
-        android:text="ADD NOTE"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnConsultar"
-        app:layout_constraintHorizontal_bias="0.242"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnConsultar"
+        android:id="@+id/btnConsultar2"
         android:layout_width="163dp"
         android:layout_height="206dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:background="#E69827"
+        android:onClick="_addActivity"
         android:text="MY NOTES"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.449" />
+
+    <Button
+        android:id="@+id/btnCrear"
+        android:layout_width="163dp"
+        android:layout_height="206dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#8BC34A"
+        android:onClick="_addActivity"
+        android:text="ADD NOTE"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnConsultar2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
 </android.support.constraint.ConstraintLayout>

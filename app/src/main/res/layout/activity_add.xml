@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7AF0CBCB"
@@ -29,7 +30,7 @@
         android:layout_width="305dp"
         android:layout_height="68dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:autofillHints=""
         android:ems="10"
@@ -46,35 +47,35 @@
         android:id="@+id/btnEdit"
         android:layout_width="111dp"
         android:layout_height="46dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="12dp"
         android:background="#2196F3"
         android:text="Edit"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="115dp"
         android:layout_height="44dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="72dp"
         android:background="#EB2315"
         android:onClick="eliminar"
         android:text="Delete"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+        app:layout_constraintTop_toBottomOf="@+id/btnBuscar" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="483dp" />
+        app:layout_constraintGuide_begin="404dp" />
 
     <EditText
         android:id="@+id/txtUbicacion"
@@ -97,15 +98,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/txtAsist"
         android:inputType="number"
         android:textColor="#706767"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFin" />
 
@@ -114,41 +112,60 @@
         android:layout_width="130dp"
         android:layout_height="71dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="@string/txtInicio"
         android:inputType="textPersonName"
         android:textColor="#706767"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion" />
 
     <EditText
         android:id="@+id/txtFin"
         android:layout_width="127dp"
         android:layout_height="66dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="52dp"
         android:ems="10"
         android:hint="@string/txtFin"
         android:inputType="textPersonName"
         android:textColor="#706767"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcodigo" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="159dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="#D1820C"
+        android:onClick="buscar"
+        android:text="@android:string/search_go"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOk" />
 
     <EditText
         android:id="@+id/txtcodigo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="116dp"
+        android:layout_height="46dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="@string/txtcodigo"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAsist" />
 
 </android.support.constraint.ConstraintLayout>
