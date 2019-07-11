@@ -134,4 +134,46 @@ public class addActivity extends AppCompatActivity {
     }
 
 
+    public void Modificar(View view){
+        APPSQLiteOpenHelper con = new APPSQLiteOpenHelper(this, "notas", null, 1);
+        SQLiteDatabase sql = con.getWritableDatabase();
+
+
+        String cod= codigo.getText().toString();
+        String tit = titulo.getText().toString();
+        String ubic = ubicacion.getText().toString();
+        String init = inicio.getText().toString();
+        String end = fin.getText().toString();
+        String assis = asistente.getText().toString();
+
+        if(!cod.isEmpty() && !tit.isEmpty() && !ubic.isEmpty() && !init.isEmpty() && !end.isEmpty() && !assis.isEmpty()){
+
+            ContentValues registro = new ContentValues();
+            registro.put("titulo", tit);
+            registro.put("ubicacion", ubic);
+            registro.put("fecha_inicio", init);
+            registro.put("fecha_final", end);
+            registro.put("asistentes", assis);
+
+            int cantidad = sql.update("notas", registro, "_id=" + cod, null);
+
+            sql.close();
+            titulo.setText("");
+            ubicacion.setText("");
+            inicio.setText("");
+            fin.setText("");
+            asistente.setText("");
+
+            if(cantidad == 1){
+                Toast.makeText(this, "Registro modificado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "El Registro no existe", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 }
